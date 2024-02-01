@@ -22,13 +22,43 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Additional CSS for video background -->
+  <style>
+    #hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #bg-video {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+
+  <!-- Additional JavaScript for video background -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Ensure the video is muted for autoplay
+      document.getElementById('bg-video').muted = true;
+
+      // Adjust the video size on window resize
+      window.addEventListener('resize', function () {
+        var video = document.getElementById('bg-video');
+        video.style.width = '100%';
+        video.style.height = 'auto';
+      });
+    });
+  </script>
+
 </head>
 
 <body>
@@ -36,11 +66,7 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
-
       <h1 class="logo"><a href="index.html">Calvin Zamora</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -49,26 +75,26 @@
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      </nav>
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
+  <div id="hero" class="hero route">
+    <video autoplay muted loop poster="assets/img/poster.jpg" id="bg-video">
+      <source src="assets/img/CAL_PICKUP_VIDEO.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="hero-title mb-4">I am Cal!</h1>
           <p class="hero-subtitle"><span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
     </div>
   </div><!-- End Hero Section -->
-
   <main id="main">
 
 
